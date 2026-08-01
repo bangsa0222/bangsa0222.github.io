@@ -121,8 +121,8 @@
                 </div>
             </div>
 
-            <!-- 교육 과정 카드 (2칸 차지하여 중요도 강조) -->
-            <div class="md:col-span-2 bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-center relative overflow-hidden">
+            <!-- 교육 과정 카드 (2칸 차지하여 중요도 강조 제거, 1칸으로 변경) -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-center relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full opacity-50 pointer-events-none"></div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl">
@@ -134,7 +134,7 @@
                 <div class="space-y-5 relative z-10">
                     <div>
                         <div class="flex flex-wrap items-center gap-2 mb-1">
-                            <p class="text-lg md:text-xl font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
+                            <p class="text-base font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
                             <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md">수료</span>
                         </div>
                         <p class="text-slate-500 font-medium text-sm">대우능력개발원 KDT (9개월 완주)</p>
@@ -172,23 +172,19 @@
                 </div>
                 <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Certificates & Links</h3>
                 
-                <div class="space-y-4">
+                <div class="space-y-4 flex flex-col h-[calc(100%-4rem)]">
                     <!-- 자격증 리스트 -->
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 flex-grow">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-check text-amber-500 text-sm"></i>
                             <span class="text-slate-700 font-bold text-sm">정보처리산업기사 (필기)</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-amber-500 text-sm"></i>
-                            <span class="text-slate-700 font-bold text-sm">SQLD</span>
                         </div>
                     </div>
 
                     <div class="w-full h-px bg-slate-100"></div>
 
                     <!-- 깃허브 링크 -->
-                    <div class="px-4 py-3 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all">
+                    <div class="px-4 py-3 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all mt-auto">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors"></i>
                             <span class="font-bold text-slate-700 text-sm">GitHub</span>
