@@ -2,147 +2,338 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- 스마트폰 등 모든 기기에서 예쁘게 보이도록 반응형 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>원태규 포트폴리오</title>
     
-    <!-- 1. Tailwind CSS 불러오기 (세련된 디자인을 위한 프레임워크) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 2. 깔끔한 Inter 폰트 및 폰트어썸(아이콘) 불러오기 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 아이콘을 위한 FontAwesome 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 기본 폰트 설정 및 부드러운 스크롤 */
+        /* 요즘 트렌드인 Pretendard 폰트 적용 (더 개발자스럽고 깔끔함) */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #f8fafc; /* 아주 연한 슬레이트 배경 */
+            color: #0f172a;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
         
-        /* 텍스트 드래그 시 예쁜 파란색으로 선택되도록 설정 */
         ::selection {
-            background-color: #bfdbfe; /* Tailwind blue-200 */
-            color: #1e3a8a; /* Tailwind blue-900 */
+            background-color: #3b82f6;
+            color: white;
         }
+
+        /* 둥둥 떠오르는 듯한 카드 애니메이션 */
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* 부드럽게 나타나는 애니메이션 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* 가로 스크롤바 숨기기 (디자인 깔끔하게) */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="relative flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
 
-    <header class="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        <div class="absolute top-[20%] right-[-5%] w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+    </div>
+
+    <header class="w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-white/60 border-b border-slate-200/50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- 좌측 로고 부분 -->
-            <a href="#" class="text-lg font-bold text-gray-900 tracking-tight hover:text-blue-600 transition-colors">
+            <a href="#" class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight">
                 원태규 포트폴리오
             </a>
-            
-            <!-- 우측 메뉴 (모바일에서는 숨김 처리, 데스크톱에서만 노출) -->
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
-                <a href="#" class="text-gray-900 font-semibold">소개</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">프로젝트</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">기술 스택</a>
-                <a href="#" class="hover:text-gray-900 transition-colors">연락처</a>
-            </nav>
         </div>
     </header>
 
-    <main class="flex-grow flex flex-col items-center justify-center px-6 pt-24 pb-16">
+    <main class="flex-grow w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         
-        <!-- 타이틀 및 닉네임 섹션 -->
-        <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
-            <h2 class="text-lg md:text-xl font-semibold text-gray-500 tracking-wide mb-3">
-                UX와 시스템 안정성의 균형을 맞추는 개발자
-            </h2>
-            <h1 class="text-6xl md:text-8xl font-black text-gray-900 tracking-tighter mb-6">
-                원태규
-            </h1>
-            <p class="text-xl md:text-2xl font-bold text-gray-700 tracking-wide mb-10">
-                Java · Spring Boot · JavaScript · Flutter · Ubuntu
-            </p>
+        <div class="flex flex-col lg:flex-row gap-12 items-center lg:items-start animate-fade-in">
+            <!-- 좌측 타이틀 -->
+            <div class="flex-1 text-center lg:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-6 border border-blue-200">
+                    Full-Stack Developer
+                </span>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+                    안녕하세요,<br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">원태규</span>입니다.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+                    UX와 시스템 안정성의 균형을 맞추는 개발자입니다.<br>
+                    꼼꼼한 예외 처리와 비동기 통신을 통한 UX 개선을 고민하며, 머릿속의 아이디어를 코드로 실현하는 것을 즐깁니다.
+                </p>
+                
+                <!-- 기술 스택 태그 -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-10">
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-brands fa-java text-orange-500 text-lg"></i> Java</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-leaf text-green-500 text-lg"></i> Spring</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-robot text-blue-500 text-lg"></i> Spring AI</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-laptop-code text-purple-500 text-lg"></i> IntelliJ</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-200">
             
-            <!-- 상세 자기소개 텍스트 -->
-            <div class="text-base md:text-lg text-gray-600 leading-relaxed font-medium space-y-2">
-                <p>인덕대학교 컴퓨터소프트웨어학과에 재학 중이며,<br class="hidden md:block"> 대우능력개발원 KDT 클라우드 기반 Java 웹개발자 시큐어코딩 과정을 수료했습니다.</p>
-                <p>2003년생 팀원 세 명과 함께 의기투합해 팀을 이끌며<br class="hidden md:block"> 캠퍼스 종합 플랫폼 <span class="font-bold text-gray-900">'학식목장'</span>을 기획부터 배포까지 완주했습니다.</p>
-                <p>꼼꼼한 예외 처리와 비동기 통신을 통한 UX 개선을 고민하며,<br class="hidden md:block"> 머릿속의 아이디어를 코드로 실현하는 것을 즐깁니다.</p>
+            <!-- 인적사항 카드 1 -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Profile</h3>
+                <p class="text-lg font-bold text-slate-800 mb-1">2003. 01. 10</p>
+                <p class="text-slate-600 font-medium">서울특별시 동대문구</p>
             </div>
-        </div>
 
-        <!-- Oopy/Notion 스타일의 깔끔한 카드형 그리드 레이아웃 -->
-        <div class="w-full max-w-4xl mx-auto mt-20">
-            <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white flex flex-col divide-y divide-gray-200">
-                
-                <!-- 첫 번째 줄 (2칸) -->
-                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                    <!-- 이름 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">이름</p>
-                        <p class="text-base font-bold text-gray-900">원태규 (Won Taegyu)</p>
+            <!-- 교육 과정 카드 (2칸 차지하여 중요도 강조) -->
+            <div class="md:col-span-2 bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full opacity-50 pointer-events-none"></div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <!-- 생년월일 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">생년월일</p>
-                        <p class="text-base font-bold text-gray-900">2003.01.10</p>
-                    </div>
-                </div>
-
-                <!-- 두 번째 줄 (2칸) -->
-                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                    <!-- 지역 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">지역</p>
-                        <p class="text-base font-bold text-gray-900">서울특별시 동대문구</p>
-                    </div>
-                    <!-- 학력 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">학력</p>
-                        <!-- 인트로의 학과와 표의 학과가 달라서 오빠가 준 텍스트 그대로 적용! -->
-                        <p class="text-base font-bold text-gray-900">인덕대학교 정보통신공학과 (재학중)</p>
-                    </div>
-                </div>
-
-                <!-- 세 번째 줄 (2칸) -->
-                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                    <!-- 연락처 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors group cursor-pointer" onclick="copyToClipboard('010-3605-8760\nbangsa0222@naver.com')">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">연락처 <span class="hidden group-hover:inline text-blue-500 text-[10px] ml-1">(클릭하여 복사)</span></p>
-                        <p class="text-base font-bold text-gray-900">010-3605-8760</p>
-                        <p class="text-base font-bold text-blue-600 hover:underline">bangsa0222@naver.com</p>
-                    </div>
-                    <!-- 자격증 -->
-                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                        <p class="text-xs font-semibold text-gray-400 mb-1">자격증</p>
-                        <p class="text-base font-bold text-gray-900">정보처리산업기사(필기)</p>
-                        <p class="text-base font-bold text-gray-900">SQLD</p>
-                    </div>
-                </div>
-
-                <!-- 네 번째 줄 (전체 너비 1칸 - 링크용) -->
-                <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
-                    <p class="text-xs font-semibold text-gray-400 mb-1">Link (GitHub)</p>
-                    <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-base font-bold text-blue-600 hover:text-blue-800 hover:underline break-all flex items-center gap-2">
-                        <!-- 깃허브 아이콘 (SVG) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        https://github.com/project-mokjang/haksik
-                    </a>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Education</h3>
                 </div>
                 
+                <div class="space-y-5 relative z-10">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <p class="text-lg md:text-xl font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md">수료</span>
+                        </div>
+                        <p class="text-slate-500 font-medium text-sm">대우능력개발원 KDT (9개월 완주)</p>
+                    </div>
+                    
+                    <div class="w-full h-px bg-slate-100"></div>
+                    
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <p class="text-base font-bold text-slate-700">인덕대학교 정보통신공학과</p>
+                            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-md">재학중</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- 스킬 카드 -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Core Skills</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-3"><i class="fa-brands fa-java text-orange-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Java</span></div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-leaf text-green-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring</span></div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-robot text-blue-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring AI</span></div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-laptop-code text-purple-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">IntelliJ</span></div>
+                </div>
+            </div>
+
+            <!-- 자격증 카드 -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="space-y-3">
+                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+                            <span class="font-bold text-slate-700">GitHub</span>
+                        </div>
+                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1">
+                            보러가기 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div class="mt-24 animate-fade-in delay-300">
+            <div class="flex items-center gap-3 mb-8">
+                <i class="fa-solid fa-laptop-code text-3xl text-blue-600"></i>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Project</h2>
+            </div>
+            
+            <!-- 프로젝트 메인 카드 -->
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group">
+                <!-- 배경 장식 -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
+                
+                <div class="flex flex-col gap-16 relative z-10">
+                    <!-- 상단: 프로젝트 기본 정보 및 설명 -->
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        <div class="flex-[1]">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">Team 양떼목장</span>
+                                <span class="text-slate-500 text-sm font-medium"><i class="fa-regular fa-calendar mr-1"></i> 2024.05 ~ 2024.06 (8주)</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">학식목장</h3>
+                            <p class="text-lg text-slate-500 font-medium mb-6">대학생 식사·만남 매칭 및 캠퍼스 커뮤니티 플랫폼</p>
+                            
+                            <p class="text-slate-600 mb-8 leading-relaxed">
+                                단순한 식당 추천을 넘어, 대학생들의 목적(학식, 소개팅, 과팅)에 맞는 위치 기반 매칭과 실시간 채팅을 지원합니다. 또한 사용자 취향 데이터를 학습한 AI가 상황에 맞는 최적의 장소를 큐레이션 해주는 종합 커뮤니티 서비스입니다.
+                            </p>
+                            
+                            <!-- 사용 기술 -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Java 21</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Spring Boot</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Spring AI</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Gemini API</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Vanilla JS</span>
+                            </div>
+                            
+                            <!-- 깃허브 링크 버튼 (설명 바로 아래) -->
+                            <a href="https://github.com/project-mokjang/haksik" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
+                                <i class="fa-brands fa-github text-xl"></i>
+                                프로젝트 '학식목장' GitHub 보러가기
+                                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- 우측: 핵심 기여 내용 (텍스트) -->
+                        <div class="flex-[1.2] flex flex-col justify-center">
+                            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-check-double text-blue-500"></i> WHAT I DID (핵심 기여 및 트러블슈팅)
+                            </h4>
+                            
+                            <div class="space-y-8">
+                                <!-- 기능 1 -->
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-blue-100">
+                                        <i class="fa-solid fa-robot"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">초개인화 AI 챗봇 엔진 구축</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            단순 키워드 매칭의 한계를 넘어, <strong class="text-blue-600">Google Gemini API와 Spring AI</strong>를 도입했습니다. 사용자의 '선호 음식 데이터'를 실시간으로 추출해 시스템 프롬프트에 동적(Context Injection)으로 주입함으로써, 취향이 100% 반영된 맞춤형 식당 큐레이션을 구현했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 기능 2 -->
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-emerald-100">
+                                        <i class="fa-solid fa-user-shield"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">권한 기반 회원가입 & 마이페이지</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            일반 유저와 점주(Owner)의 권한을 명확히 분리한 회원가입 시스템을 설계했습니다. <strong>학교 이메일 인증 로직</strong>을 추가하고, 정규식(Regex)을 활용한 프론트엔드 단의 실시간 입력 데이터 필터링으로 보안과 서버 안정성을 극대화했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 기능 3 -->
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-purple-100">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">DOM 제어 기반 UX 최적화</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            입력 폼 글자 수 초과 시 브라우저의 정적 차단(`maxlength`)과 이벤트 충돌이 발생하는 문제를 발견했습니다. 이를 해결하기 위해 자바스크립트로 DOM 속성을 동적 제어하고, <strong>디바운싱(Debouncing) 기법이 적용된 비동기 토스트 알림</strong>을 띄워 사용자 피드백을 부드럽게 개선했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 하단: 프로젝트 스크린샷 갤러리 (그리드 레이아웃) -->
+                    <div class="w-full pt-10 border-t border-slate-100">
+                        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens
+                        </h4>
+                        
+                        <!-- 스크린샷 크기를 대폭 줄이고 한 줄에 6개까지 들어가도록 변경 -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 justify-items-center">
+                            
+                            <!-- 스크린샷 1: 로그인 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./login.png" alt="학식목장 로그인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Login'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">로그인</p>
+                            </div>
+                            
+                            <!-- 스크린샷 2: 회원유형 선택 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./type.png" alt="학식목장 회원유형" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Type'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">회원 유형</p>
+                            </div>
+                            
+                            <!-- 스크린샷 3: 일반 회원가입 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./user_signup.png" alt="일반 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Signup'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">일반 가입</p>
+                            </div>
+                            
+                            <!-- 스크린샷 4: 점주 회원가입 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./owner_signup.png" alt="점주 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Owner+Signup'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">점주 가입</p>
+                            </div>
+                            
+                            <!-- 스크린샷 5: 점주 대시보드 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./owner_dashboard.png" alt="점주 대시보드" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Dashboard'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">대시보드</p>
+                            </div>
+
+                            <!-- 스크린샷 6: 관리자 메인 -->
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 flex items-center justify-center h-full">
+                                    <img src="./admin.png" alt="관리자 메인" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Admin'">
+                                </div>
+                                <p class="text-center text-xs font-bold text-slate-500">관리자 화면</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
-    <!-- 푸터 (하단 여백 및 저작권) -->
-    <footer class="w-full py-8 text-center text-sm text-gray-400 mt-auto">
-        <p>© 2024 Won Taegyu. All rights reserved.</p>
+    <footer class="w-full py-8 text-center text-sm text-slate-400 mt-auto border-t border-slate-200 bg-white/50">
+        <p>© 2024 Won Taegyu. Built with Passion & Code.</p>
     </footer>
 
     <script>
-        // 연락처를 클릭했을 때 클립보드에 복사해주는 센스 있는 기능!
         function copyToClipboard(text) {
             const tempInput = document.createElement("textarea");
             tempInput.value = text;
@@ -151,32 +342,36 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 아까 우리가 씨름했던 그 '순정 알림창(Toast)' 느낌으로 살짝 띄워주기!
             const toast = document.createElement("div");
-            toast.innerText = "연락처가 복사되었습니다!";
+            toast.innerHTML = "<i class='fa-solid fa-circle-check mr-2'></i>연락처가 복사되었습니다!";
             toast.style.position = "fixed";
-            toast.style.bottom = "30px";
+            toast.style.bottom = "40px";
             toast.style.left = "50%";
             toast.style.transform = "translateX(-50%)";
-            toast.style.backgroundColor = "#333";
+            toast.style.backgroundColor = "#0f172a";
             toast.style.color = "#fff";
-            toast.style.padding = "10px 20px";
-            toast.style.borderRadius = "8px";
-            toast.style.fontSize = "14px";
+            toast.style.padding = "14px 24px";
+            toast.style.borderRadius = "999px";
+            toast.style.fontSize = "15px";
+            toast.style.fontWeight = "600";
+            toast.style.boxShadow = "0 10px 15px -3px rgb(0 0 0 / 0.1)";
             toast.style.zIndex = "1000";
             toast.style.opacity = "0";
-            toast.style.transition = "opacity 0.3s ease-in-out";
+            toast.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
             
             document.body.appendChild(toast);
             
-            // 살짝 나타났다가 사라지는 애니메이션
-            setTimeout(() => { toast.style.opacity = "1"; }, 10);
+            setTimeout(() => { 
+                toast.style.opacity = "1"; 
+                toast.style.bottom = "50px";
+            }, 10);
+            
             setTimeout(() => { 
                 toast.style.opacity = "0"; 
+                toast.style.bottom = "40px";
                 setTimeout(() => { document.body.removeChild(toast); }, 300);
             }, 2000);
         }
     </script>
-
 </body>
 </html>
