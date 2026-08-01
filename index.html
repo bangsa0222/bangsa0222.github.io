@@ -104,7 +104,21 @@
                 </div>
                 <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Profile</h3>
                 <p class="text-lg font-bold text-slate-800 mb-1">2003. 01. 10</p>
-                <p class="text-slate-600 font-medium">서울특별시 동대문구</p>
+                <p class="text-slate-600 font-medium mb-5">서울특별시 동대문구</p>
+                
+                <div class="w-full h-px bg-slate-100 mb-4"></div>
+                
+                <!-- 연락처 정보 (클릭 시 복사됨) -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('010-3605-8760')" title="클릭하여 복사">
+                        <i class="fa-solid fa-phone w-4 text-center"></i>
+                        <span class="text-sm font-medium">010-3605-8760</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('bangsa0222@naver.com')" title="클릭하여 복사">
+                        <i class="fa-solid fa-envelope w-4 text-center"></i>
+                        <span class="text-sm font-medium">bangsa0222@naver.com</span>
+                    </div>
+                </div>
             </div>
 
             <!-- 교육 과정 카드 (2칸 차지하여 중요도 강조) -->
@@ -145,25 +159,42 @@
                 <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Core Skills</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center gap-3"><i class="fa-brands fa-java text-orange-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Java</span></div>
-                    <div class="flex items-center gap-3"><i class="fa-solid fa-leaf text-green-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring</span></div>
-                    <div class="flex items-center gap-3"><i class="fa-solid fa-robot text-blue-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring AI</span></div>
+                    <div class="flex items-center gap-3"><i class="fa-solid fa-leaf text-green-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring Boot / AI</span></div>
+                    <div class="flex items-center gap-3"><i class="fa-brands fa-js text-yellow-400 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">JavaScript</span></div>
                     <div class="flex items-center gap-3"><i class="fa-solid fa-laptop-code text-purple-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">IntelliJ</span></div>
                 </div>
             </div>
 
-            <!-- 자격증 카드 -->
+            <!-- 자격증 & 링크 카드 -->
             <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
                 <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6">
                     <i class="fa-solid fa-award"></i>
                 </div>
-                <div class="space-y-3">
-                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors"></i>
-                            <span class="font-bold text-slate-700">GitHub</span>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Certificates & Links</h3>
+                
+                <div class="space-y-4">
+                    <!-- 자격증 리스트 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                            <span class="text-slate-700 font-bold text-sm">정보처리산업기사 (필기)</span>
                         </div>
-                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1">
-                            보러가기 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-500 text-sm"></i>
+                            <span class="text-slate-700 font-bold text-sm">SQLD</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-slate-100"></div>
+
+                    <!-- 깃허브 링크 -->
+                    <div class="px-4 py-3 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+                            <span class="font-bold text-slate-700 text-sm">GitHub</span>
+                        </div>
+                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-xs font-medium text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1">
+                            보러가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
                 </div>
