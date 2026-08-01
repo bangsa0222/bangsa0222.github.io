@@ -95,7 +95,7 @@
             </div>
         </div>
 
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-200">
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in delay-200 max-w-4xl mx-auto">
             
             <!-- 인적사항 카드 1 -->
             <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
@@ -121,7 +121,7 @@
                 </div>
             </div>
 
-            <!-- 교육 과정 카드 (2칸 차지하여 중요도 강조 제거, 1칸으로 변경) -->
+            <!-- 교육 과정 카드 2 -->
             <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-center relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full opacity-50 pointer-events-none"></div>
                 <div class="flex items-center gap-3 mb-6">
@@ -151,45 +151,45 @@
                 </div>
             </div>
 
-            <!-- 스킬 카드 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+            <!-- 스킬 카드 3 -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
                     <i class="fa-solid fa-code"></i>
                 </div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Core Skills</h3>
-                <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-3"><i class="fa-brands fa-java text-orange-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Java</span></div>
-                    <div class="flex items-center gap-3"><i class="fa-solid fa-leaf text-green-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">Spring Boot / AI</span></div>
-                    <div class="flex items-center gap-3"><i class="fa-brands fa-js text-yellow-400 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">JavaScript</span></div>
-                    <div class="flex items-center gap-3"><i class="fa-solid fa-laptop-code text-purple-500 text-lg w-5 text-center"></i> <span class="font-bold text-slate-700">IntelliJ</span></div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Core Skills</h3>
+                <div class="flex flex-col gap-4 flex-grow justify-center">
+                    <div class="flex items-center gap-4"><i class="fa-brands fa-java text-orange-500 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">Java</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-leaf text-green-500 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">Spring Boot / AI</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-brands fa-js text-yellow-400 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">JavaScript</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-laptop-code text-purple-500 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">IntelliJ</span></div>
                 </div>
             </div>
 
-            <!-- 자격증 & 링크 카드 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
-                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+            <!-- 자격증 & 링크 카드 4 -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
                     <i class="fa-solid fa-award"></i>
                 </div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Certificates & Links</h3>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Certificates & Links</h3>
                 
-                <div class="space-y-4 flex flex-col h-[calc(100%-4rem)]">
+                <div class="space-y-4 flex flex-col flex-grow justify-between">
                     <!-- 자격증 리스트 -->
-                    <div class="flex flex-col gap-2 flex-grow">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-amber-500 text-sm"></i>
-                            <span class="text-slate-700 font-bold text-sm">정보처리산업기사 (필기)</span>
+                    <div class="flex flex-col gap-3 justify-center flex-grow">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-amber-500"></i>
+                            <span class="text-slate-700 font-bold text-base">정보처리산업기사 (필기)</span>
                         </div>
                     </div>
 
-                    <div class="w-full h-px bg-slate-100"></div>
+                    <div class="w-full h-px bg-slate-100 my-2"></div>
 
                     <!-- 깃허브 링크 -->
-                    <div class="px-4 py-3 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all mt-auto">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors"></i>
-                            <span class="font-bold text-slate-700 text-sm">GitHub</span>
+                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all shrink-0">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors text-lg"></i>
+                            <span class="font-bold text-slate-700 text-base">GitHub</span>
                         </div>
-                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-xs font-medium text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1">
+                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5">
                             보러가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                         </a>
                     </div>
