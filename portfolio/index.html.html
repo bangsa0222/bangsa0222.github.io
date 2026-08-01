@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 스마트폰 등 모든 기기에서 예쁘게 보이도록 반응형 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원태규 포트폴리오</title>
+    
+    <!-- 1. Tailwind CSS 불러오기 (세련된 디자인을 위한 프레임워크) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. 깔끔한 Inter 폰트 및 폰트어썸(아이콘) 불러오기 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 폰트 설정 및 부드러운 스크롤 */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* 텍스트 드래그 시 예쁜 파란색으로 선택되도록 설정 */
+        ::selection {
+            background-color: #bfdbfe; /* Tailwind blue-200 */
+            color: #1e3a8a; /* Tailwind blue-900 */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- 좌측 로고 부분 -->
+            <a href="#" class="text-lg font-bold text-gray-900 tracking-tight hover:text-blue-600 transition-colors">
+                원태규 포트폴리오
+            </a>
+            
+            <!-- 우측 메뉴 (모바일에서는 숨김 처리, 데스크톱에서만 노출) -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+                <a href="#" class="text-gray-900 font-semibold">소개</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">프로젝트</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">기술 스택</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">연락처</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-6 pt-24 pb-16">
+        
+        <!-- 타이틀 및 닉네임 섹션 -->
+        <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+            <h2 class="text-lg md:text-xl font-semibold text-gray-500 tracking-wide mb-3">
+                UX와 시스템 안정성의 균형을 맞추는 개발자
+            </h2>
+            <h1 class="text-6xl md:text-8xl font-black text-gray-900 tracking-tighter mb-6">
+                원태규
+            </h1>
+            <p class="text-xl md:text-2xl font-bold text-gray-700 tracking-wide mb-10">
+                Java · Spring Boot · JavaScript · Flutter · Ubuntu
+            </p>
+            
+            <!-- 상세 자기소개 텍스트 -->
+            <div class="text-base md:text-lg text-gray-600 leading-relaxed font-medium space-y-2">
+                <p>인덕대학교 컴퓨터소프트웨어학과에 재학 중이며,<br class="hidden md:block"> 대우능력개발원 KDT 클라우드 기반 Java 웹개발자 시큐어코딩 과정을 수료했습니다.</p>
+                <p>2003년생 팀원 세 명과 함께 의기투합해 팀을 이끌며<br class="hidden md:block"> 캠퍼스 종합 플랫폼 <span class="font-bold text-gray-900">'학식목장'</span>을 기획부터 배포까지 완주했습니다.</p>
+                <p>꼼꼼한 예외 처리와 비동기 통신을 통한 UX 개선을 고민하며,<br class="hidden md:block"> 머릿속의 아이디어를 코드로 실현하는 것을 즐깁니다.</p>
+            </div>
+        </div>
+
+        <!-- Oopy/Notion 스타일의 깔끔한 카드형 그리드 레이아웃 -->
+        <div class="w-full max-w-4xl mx-auto mt-20">
+            <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white flex flex-col divide-y divide-gray-200">
+                
+                <!-- 첫 번째 줄 (2칸) -->
+                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <!-- 이름 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">이름</p>
+                        <p class="text-base font-bold text-gray-900">원태규 (Won Taegyu)</p>
+                    </div>
+                    <!-- 생년월일 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">생년월일</p>
+                        <p class="text-base font-bold text-gray-900">2003.01.10</p>
+                    </div>
+                </div>
+
+                <!-- 두 번째 줄 (2칸) -->
+                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <!-- 지역 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">지역</p>
+                        <p class="text-base font-bold text-gray-900">서울특별시 동대문구</p>
+                    </div>
+                    <!-- 학력 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">학력</p>
+                        <!-- 인트로의 학과와 표의 학과가 달라서 오빠가 준 텍스트 그대로 적용! -->
+                        <p class="text-base font-bold text-gray-900">인덕대학교 정보통신공학과 (재학중)</p>
+                    </div>
+                </div>
+
+                <!-- 세 번째 줄 (2칸) -->
+                <div class="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <!-- 연락처 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors group cursor-pointer" onclick="copyToClipboard('010-3605-8760\nbangsa0222@naver.com')">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">연락처 <span class="hidden group-hover:inline text-blue-500 text-[10px] ml-1">(클릭하여 복사)</span></p>
+                        <p class="text-base font-bold text-gray-900">010-3605-8760</p>
+                        <p class="text-base font-bold text-blue-600 hover:underline">bangsa0222@naver.com</p>
+                    </div>
+                    <!-- 자격증 -->
+                    <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                        <p class="text-xs font-semibold text-gray-400 mb-1">자격증</p>
+                        <p class="text-base font-bold text-gray-900">정보처리산업기사(필기)</p>
+                        <p class="text-base font-bold text-gray-900">SQLD</p>
+                    </div>
+                </div>
+
+                <!-- 네 번째 줄 (전체 너비 1칸 - 링크용) -->
+                <div class="flex-1 p-6 hover:bg-gray-50 transition-colors">
+                    <p class="text-xs font-semibold text-gray-400 mb-1">Link (GitHub)</p>
+                    <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-base font-bold text-blue-600 hover:text-blue-800 hover:underline break-all flex items-center gap-2">
+                        <!-- 깃허브 아이콘 (SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        https://github.com/project-mokjang/haksik
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 (하단 여백 및 저작권) -->
+    <footer class="w-full py-8 text-center text-sm text-gray-400 mt-auto">
+        <p>© 2024 Won Taegyu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 연락처를 클릭했을 때 클립보드에 복사해주는 센스 있는 기능!
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            
+            // 아까 우리가 씨름했던 그 '순정 알림창(Toast)' 느낌으로 살짝 띄워주기!
+            const toast = document.createElement("div");
+            toast.innerText = "연락처가 복사되었습니다!";
+            toast.style.position = "fixed";
+            toast.style.bottom = "30px";
+            toast.style.left = "50%";
+            toast.style.transform = "translateX(-50%)";
+            toast.style.backgroundColor = "#333";
+            toast.style.color = "#fff";
+            toast.style.padding = "10px 20px";
+            toast.style.borderRadius = "8px";
+            toast.style.fontSize = "14px";
+            toast.style.zIndex = "1000";
+            toast.style.opacity = "0";
+            toast.style.transition = "opacity 0.3s ease-in-out";
+            
+            document.body.appendChild(toast);
+            
+            // 살짝 나타났다가 사라지는 애니메이션
+            setTimeout(() => { toast.style.opacity = "1"; }, 10);
+            setTimeout(() => { 
+                toast.style.opacity = "0"; 
+                setTimeout(() => { document.body.removeChild(toast); }, 300);
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
