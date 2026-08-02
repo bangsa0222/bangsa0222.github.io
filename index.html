@@ -493,6 +493,91 @@
                 </div>
             </div>
 
+            <!-- 세 번째 프로젝트 메인 카드 (Flutter 음성 AI 챗봇) -->
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group mt-12">
+                <!-- 배경 장식 (플러터 느낌의 스카이블루 톤) -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-50 to-blue-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
+                
+                <div class="flex flex-col gap-16 relative z-10">
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        <div class="flex-[1]">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-bold rounded-lg border border-sky-200">개인 사이드 프로젝트</span>
+                                <span class="text-slate-500 text-sm font-medium"><i class="fa-solid fa-mobile-screen-button mr-1"></i> Mobile Cross-Platform</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">모바일 음성인식 AI 비서</h3>
+                            <p class="text-lg text-slate-500 font-medium mb-6">Flutter와 Gemini API를 결합한 실시간 Voice Chat App</p>
+                            
+                            <p class="text-slate-600 mb-8 leading-relaxed">
+                                화면 터치와 키보드 타이핑이 불편한 상황에서도 AI를 쉽게 활용할 수 있도록 기획한 <strong>모바일 전용 음성 챗봇</strong>입니다. 사용자의 음성을 텍스트로 변환하여 Google Gemini 2.5 Flash 모델에 전달하고, 생성된 답변을 자연스러운 사람의 음성(TTS)으로 다시 읽어주어 <strong>실제 비서와 대화하는 듯한 UX</strong>를 제공합니다.
+                            </p>
+                            
+                            <!-- 사용 기술 -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Flutter</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Dart</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Gemini 2.5 Flash</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Speech-to-Text (STT)</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Text-to-Speech (TTS)</span>
+                            </div>
+
+                            <!-- 블로그 영상 링크 버튼 (좌측) -->
+                            <a href="https://blog.naver.com/bangsa0222/224099857578" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-sky-500 to-blue-500 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
+                                <i class="fa-solid fa-video text-xl"></i>
+                                앱 동작 시연 영상 보러가기
+                                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- 우측: 핵심 기여 내용 (텍스트) -->
+                        <div class="flex-[1.2] flex flex-col justify-center">
+                            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-code-compare text-sky-500"></i> TECHNICAL HIGHLIGHTS
+                            </h4>
+                            
+                            <div class="space-y-8">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-sky-100">
+                                        <i class="fa-solid fa-microphone-lines"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">하드웨어 제어 및 UX 디테일 최적화</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            Flutter의 `speech_to_text` 모듈을 활용해 기기의 마이크를 제어하고, <strong>한국어 로캘(ko_KR)을 자동 탐색하는 로직</strong>을 구현했습니다. 또한, 출력되는 TTS 음성의 속도를 0.5배로 세밀하게 조절하여 기계음 특유의 이질감을 줄이고 자연스러운 대화 UX를 완성했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-blue-100">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">API 과부하(Rate Limit) 방지 쓰로틀링</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            사용자의 연속적인 버튼 연타나 음성 중복 입력으로 인한 HTTP 429(Too Many Requests) 에러를 방지하기 위해, `DateTime`을 활용해 <strong>최소 800ms의 딜레이를 보장하는 쓰로틀링(Throttling) 방어 로직</strong>을 추가하여 서비스 안정성을 확보했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-indigo-100">
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">대화형 컨텍스트(Context) 유지 아키텍처</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            단발성 API 호출의 한계를 극복하기 위해 `ChatMessage` 객체 배열에 유저와 모델의 <strong>과거 대화 이력을 누적(History)</strong>시키고, 이를 JSON 페이로드로 직렬화하여 API에 전송함으로써 문맥을 기억하는 지능형 비서를 구현했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
         <!-- 712시간 디테일 커리큘럼 섹션 -->
