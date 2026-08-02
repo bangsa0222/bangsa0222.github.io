@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 요즘 트렌드인 Pretendard 폰트 적용 (더 개발자스럽고 깔끔함) */
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            background-color: #f8fafc; /* 아주 연한 슬레이트 배경 */
+            background-color: #f8fafc;
             color: #0f172a;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
@@ -27,7 +26,6 @@
             color: white;
         }
 
-        /* 둥둥 떠오르는 듯한 카드 애니메이션 */
         .hover-card {
             transition: all 0.3s ease;
         }
@@ -36,7 +34,6 @@
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
 
-        /* 부드럽게 나타나는 애니메이션 */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -47,8 +44,8 @@
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
 
-        /* 가로 스크롤바 숨기기 (디자인 깔끔하게) */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -71,7 +68,6 @@
     <main class="flex-grow w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         
         <div class="flex flex-col gap-12 items-center animate-fade-in">
-            <!-- 메인 타이틀 (중앙 정렬로 변경) -->
             <div class="flex-1 text-center w-full">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-6 border border-blue-200">
                     Full-Stack Developer
@@ -85,7 +81,6 @@
                     꼼꼼한 예외 처리와 비동기 통신을 통한 UX 개선을 고민하며, 머릿속의 아이디어를 코드로 실현하는 것을 즐깁니다.
                 </p>
                 
-                <!-- 기술 스택 태그 (중앙 정렬로 변경) -->
                 <div class="flex flex-wrap justify-center gap-2 mb-10">
                     <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-brands fa-java text-orange-500 text-lg"></i> Java</span>
                     <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-leaf text-green-500 text-lg"></i> Spring</span>
@@ -95,63 +90,36 @@
             </div>
         </div>
 
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in delay-200 max-w-4xl mx-auto">
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in delay-200 max-w-5xl mx-auto">
             
             <!-- 인적사항 카드 1 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-6">
-                    <i class="fa-solid fa-user-astronaut"></i>
-                </div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Profile</h3>
-                <p class="text-lg font-bold text-slate-800 mb-1">2003. 01. 10</p>
-                <p class="text-slate-600 font-medium mb-5">서울특별시 동대문구</p>
-                
-                <div class="w-full h-px bg-slate-100 mb-4"></div>
-                
-                <!-- 연락처 정보 (클릭 시 복사됨) -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('010-3605-8760')" title="클릭하여 복사">
-                        <i class="fa-solid fa-phone w-4 text-center"></i>
-                        <span class="text-sm font-medium">010-3605-8760</span>
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-user-astronaut"></i>
                     </div>
-                    <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('bangsa0222@naver.com')" title="클릭하여 복사">
-                        <i class="fa-solid fa-envelope w-4 text-center"></i>
-                        <span class="text-sm font-medium">bangsa0222@naver.com</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 교육 과정 카드 2 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-center relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full opacity-50 pointer-events-none"></div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Education</h3>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Profile</h3>
+                    <p class="text-lg font-bold text-slate-800 mb-1">2003. 01. 10</p>
+                    <p class="text-slate-600 font-medium mb-3">서울특별시 동대문구</p>
+                    <p class="text-slate-500 font-semibold text-sm mb-5"><i class="fa-solid fa-building-columns mr-1"></i> 인덕대학교 정보통신공학과 <span class="text-xs bg-slate-100 px-1.5 py-0.5 rounded ml-1">재학</span></p>
                 </div>
                 
-                <div class="space-y-5 relative z-10">
-                    <div>
-                        <div class="flex flex-wrap items-center gap-2 mb-1">
-                            <p class="text-base font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md">수료</span>
+                <div>
+                    <div class="w-full h-px bg-slate-100 mb-4"></div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('010-3605-8760')" title="클릭하여 복사">
+                            <i class="fa-solid fa-phone w-4 text-center"></i>
+                            <span class="text-sm font-medium">010-3605-8760</span>
                         </div>
-                        <p class="text-slate-500 font-medium text-sm">대우능력개발원 KDT (9개월 완주)</p>
-                    </div>
-                    
-                    <div class="w-full h-px bg-slate-100"></div>
-                    
-                    <div>
-                        <div class="flex flex-wrap items-center gap-2 mb-1">
-                            <p class="text-base font-bold text-slate-700">인덕대학교 정보통신공학과</p>
-                            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-md">재학중</span>
+                        <div class="flex items-center gap-3 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" onclick="copyToClipboard('bangsa0222@naver.com')" title="클릭하여 복사">
+                            <i class="fa-solid fa-envelope w-4 text-center"></i>
+                            <span class="text-sm font-medium">bangsa0222@naver.com</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 스킬 카드 3 -->
+            <!-- 스킬 카드 2 -->
             <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
                 <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
                     <i class="fa-solid fa-code"></i>
@@ -165,7 +133,7 @@
                 </div>
             </div>
 
-            <!-- 자격증 & 링크 카드 4 -->
+            <!-- 자격증 & 링크 카드 3 -->
             <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
                 <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
                     <i class="fa-solid fa-award"></i>
@@ -173,7 +141,6 @@
                 <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Certificates & Links</h3>
                 
                 <div class="space-y-4 flex flex-col flex-grow justify-between">
-                    <!-- 자격증 리스트 -->
                     <div class="flex flex-col gap-3 justify-center flex-grow">
                         <div class="flex items-center gap-3">
                             <i class="fa-solid fa-check text-amber-500"></i>
@@ -181,7 +148,16 @@
                         </div>
                     </div>
 
-                   
+                    <div class="w-full h-px bg-slate-100 my-2"></div>
+
+                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all shrink-0">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors text-lg"></i>
+                            <span class="font-bold text-slate-700 text-base">GitHub</span>
+                        </div>
+                        <a href="https://github.com/project-mokjang/haksik" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5">
+                            보러가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -194,13 +170,10 @@
                 <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Project</h2>
             </div>
             
-            <!-- 프로젝트 메인 카드 -->
             <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group">
-                <!-- 배경 장식 -->
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 
                 <div class="flex flex-col gap-16 relative z-10">
-                    <!-- 상단: 프로젝트 기본 정보 및 설명 -->
                     <div class="flex flex-col lg:flex-row gap-12">
                         <div class="flex-[1]">
                             <div class="flex items-center gap-3 mb-4">
@@ -214,7 +187,6 @@
                                 단순한 식당 추천을 넘어, 대학생들의 목적(학식, 소개팅, 과팅)에 맞는 위치 기반 매칭과 실시간 채팅을 지원합니다. 또한 사용자 취향 데이터를 학습한 AI가 상황에 맞는 최적의 장소를 큐레이션 해주는 종합 커뮤니티 서비스입니다.
                             </p>
                             
-                            <!-- 사용 기술 -->
                             <div class="flex flex-wrap gap-2 mb-8">
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Java 21</span>
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Spring Boot</span>
@@ -223,7 +195,6 @@
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Vanilla JS</span>
                             </div>
                             
-                            <!-- 깃허브 링크 버튼 (설명 바로 아래) -->
                             <a href="https://github.com/project-mokjang/haksik" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
                                 <i class="fa-brands fa-github text-xl"></i>
                                 프로젝트 '학식목장' GitHub 보러가기
@@ -231,14 +202,12 @@
                             </a>
                         </div>
                         
-                        <!-- 우측: 핵심 기여 내용 (텍스트) -->
                         <div class="flex-[1.2] flex flex-col justify-center">
                             <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                                 <i class="fa-solid fa-check-double text-blue-500"></i> WHAT I DID (핵심 기여 및 트러블슈팅)
                             </h4>
                             
                             <div class="space-y-8">
-                                <!-- 기능 1 -->
                                 <div class="flex gap-4">
                                     <div class="w-12 h-12 shrink-0 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-blue-100">
                                         <i class="fa-solid fa-robot"></i>
@@ -251,7 +220,6 @@
                                     </div>
                                 </div>
                                 
-                                <!-- 기능 2 -->
                                 <div class="flex gap-4">
                                     <div class="w-12 h-12 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-emerald-100">
                                         <i class="fa-solid fa-user-shield"></i>
@@ -264,7 +232,6 @@
                                     </div>
                                 </div>
                                 
-                                <!-- 기능 3 -->
                                 <div class="flex gap-4">
                                     <div class="w-12 h-12 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-purple-100">
                                         <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -280,16 +247,13 @@
                         </div>
                     </div>
 
-                    <!-- 하단: 프로젝트 스크린샷 갤러리 (그리드 레이아웃) -->
+                    <!-- 스크린샷 갤러리 -->
                     <div class="w-full pt-10 border-t border-slate-100">
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens
                         </h4>
                         
-                        <!-- 스크린샷 크기를 대폭 줄이고 한 줄에 6개까지 들어가도록 변경 -->
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 justify-items-center">
-                            
-                            <!-- 스크린샷 1: 로그인 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
                                     <img src="./login.png" alt="학식목장 로그인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Login'">
@@ -297,7 +261,6 @@
                                 <p class="text-center text-xs font-bold text-slate-500">로그인</p>
                             </div>
                             
-                            <!-- 스크린샷 2: 회원유형 선택 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
                                     <img src="./type.png" alt="학식목장 회원유형" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Type'">
@@ -305,7 +268,6 @@
                                 <p class="text-center text-xs font-bold text-slate-500">회원 유형</p>
                             </div>
                             
-                            <!-- 스크린샷 3: 일반 회원가입 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
                                     <img src="./user_signup.png" alt="일반 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Signup'">
@@ -313,7 +275,6 @@
                                 <p class="text-center text-xs font-bold text-slate-500">일반 가입</p>
                             </div>
                             
-                            <!-- 스크린샷 4: 점주 회원가입 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
                                     <img src="./owner_signup.png" alt="점주 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Owner+Signup'">
@@ -321,7 +282,6 @@
                                 <p class="text-center text-xs font-bold text-slate-500">점주 가입</p>
                             </div>
                             
-                            <!-- 스크린샷 5: 점주 대시보드 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
                                     <img src="./owner_dashboard.png" alt="점주 대시보드" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Dashboard'">
@@ -329,19 +289,126 @@
                                 <p class="text-center text-xs font-bold text-slate-500">대시보드</p>
                             </div>
 
-                            <!-- 스크린샷 6: 관리자 메인 -->
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
                                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 flex items-center justify-center h-full">
                                     <img src="./admin.png" alt="관리자 메인" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Admin'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">관리자 화면</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="mt-32 mb-10 animate-fade-in delay-400">
+            
+            <!-- Education 타이틀 -->
+            <div class="text-center mb-10">
+                <p class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">Education</p>
+                <h2 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">교육</h2>
+                <p class="text-slate-500 font-medium">대우능력개발원 KDT · 클라우드 기반 Java 웹개발자 시큐어코딩 과정 · 2025.11 – 2026.08</p>
+            </div>
+            
+            <!-- 10개 과목 커리큘럼 리스트 -->
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                
+                <!-- 과목 1 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">소양교과</p>
+                        <p class="text-sm text-slate-500">의사소통능력 · 문서작성능력</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">20h</span>
+                </div>
+                
+                <!-- 과목 2 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">자바 프로그래밍</p>
+                        <p class="text-sm text-slate-500">OOP · 컬렉션 · 멀티스레드 · 네트워크(TCP/IP) · 형상관리(Git)</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">130h</span>
+                </div>
+                
+                <!-- 과목 3 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">RDBMS 활용</p>
+                        <p class="text-sm text-slate-500">Oracle · SQL(DML/DDL) · 트랜잭션 · 프로시저 · JDBC</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">60h</span>
+                </div>
+                
+                <!-- 과목 4 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">웹 표준 기술</p>
+                        <p class="text-sm text-slate-500">HTML5 · CSS3 반응형 · JavaScript · AJAX(비동기)</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">60h</span>
+                </div>
+                
+                <!-- 과목 5 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">서버프로그램 개발</p>
+                        <p class="text-sm text-slate-500">HTTP · Servlet · 세션/쿠키 · JSP · EL/JSTL</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">56h</span>
+                </div>
+                
+                <!-- 과목 6 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">프레임워크 기반 프로그래밍</p>
+                        <p class="text-sm text-slate-500">MyBatis · Spring Core/MVC · RESTful · Maven</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">110h</span>
+                </div>
+                
+                <!-- 과목 7 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">리눅스의 이해 및 활용</p>
+                        <p class="text-sm text-slate-500">명령어 · 권한 · 네트워크 · Tomcat 운영 · 방화벽</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">30h</span>
+                </div>
+                
+                <!-- 과목 8 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">AWS 클라우드 서버 구축·보안</p>
+                        <p class="text-sm text-slate-500">EC2 · EBS · AMI · RDS · S3 · IAM · VPC · Docker 배포 · WAF</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">40h</span>
+                </div>
+                
+                <!-- 과목 9 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">보안 코딩</p>
+                        <p class="text-sm text-slate-500">애플리케이션 인증 보안 · 웹 취약점 분석 · 시큐어코딩</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">90h</span>
+                </div>
+                
+                <!-- 과목 10 -->
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 hover:bg-slate-50/50 transition-colors gap-2">
+                    <div>
+                        <p class="font-bold text-slate-800 text-base mb-1">Spring AI</p>
+                        <p class="text-sm text-slate-500">ChatClient/ChatModel · 프롬프트·Advisor · Tool Calling · 멀티 LLM 라우팅 · RAG(임베딩·벡터스토어) · Ollama 로컬모델 · 스트리밍 최적화</p>
+                    </div>
+                    <span class="font-bold text-slate-800 shrink-0">116h</span>
+                </div>
+            </div>
+            
+            <!-- 총 시간 표시 -->
+            <div class="text-center mt-8">
+                <p class="font-bold text-slate-800 text-lg">총 712h</p>
+            </div>
+            
         </div>
 
     </main>
