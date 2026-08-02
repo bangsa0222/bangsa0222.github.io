@@ -223,12 +223,15 @@
         </div>
 
         <div id="project" class="mt-32 animate-fade-in delay-300 scroll-mt-32">
+            <!-- 프로젝트 공통 타이틀 -->
             <div class="flex items-center gap-3 mb-8">
                 <i class="fa-solid fa-laptop-code text-3xl text-blue-600"></i>
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Project</h2>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">프로젝트</h2>
             </div>
             
-            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group">
+            <!-- 첫 번째 프로젝트 메인 카드 (학식목장) -->
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group mb-12">
+                <!-- 배경 장식 -->
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 
                 <div class="flex flex-col gap-16 relative z-10">
@@ -245,6 +248,7 @@
                                 단순한 식당 추천을 넘어, 대학생들의 목적(학식, 소개팅, 과팅)에 맞는 위치 기반 매칭과 실시간 채팅을 지원합니다. 또한 사용자 취향 데이터를 학습한 AI가 상황에 맞는 최적의 장소를 큐레이션 해주는 종합 커뮤니티 서비스입니다.
                             </p>
                             
+                            <!-- 사용 기술 -->
                             <div class="flex flex-wrap gap-2 mb-8">
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Java 21</span>
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Spring Boot</span>
@@ -253,6 +257,7 @@
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Vanilla JS</span>
                             </div>
                             
+                            <!-- 깃허브 링크 버튼 -->
                             <a href="https://github.com/project-mokjang/haksik" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
                                 <i class="fa-brands fa-github text-xl"></i>
                                 프로젝트 '학식목장' GitHub 보러가기
@@ -260,9 +265,10 @@
                             </a>
                         </div>
                         
+                        <!-- 우측: 핵심 기여 내용 -->
                         <div class="flex-[1.2] flex flex-col justify-center">
                             <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
-                                <i class="fa-solid fa-check-double text-blue-500"></i> WHAT I DID (핵심 기여 및 트러블슈팅)
+                                <i class="fa-solid fa-check-double text-blue-500"></i> WHAT I DID
                             </h4>
                             
                             <div class="space-y-8">
@@ -273,7 +279,7 @@
                                     <div>
                                         <h5 class="text-lg font-bold text-slate-800 mb-2">초개인화 AI 챗봇 엔진 구축</h5>
                                         <p class="text-slate-600 text-sm leading-relaxed">
-                                            단순 키워드 매칭의 한계를 넘어, <strong class="text-blue-600">Google Gemini API와 Spring AI</strong>를 도입했습니다. 사용자의 '선호 음식 데이터'를 실시간으로 추출해 시스템 프롬프트에 동적(Context Injection)으로 주입함으로써, 취향이 100% 반영된 맞춤형 식당 큐레이션을 구현했습니다.
+                                            단순 키워드 매칭의 한계를 넘어, <strong class="text-blue-600">Google Gemini API와 Spring AI</strong>를 도입했습니다. 사용자의 '선호 음식 데이터'를 실시간으로 추출해 시스템 프롬프트에 동적(Context Injection)으로 주입함으로써, 맞춤형 식당 큐레이션을 구현했습니다.
                                         </p>
                                     </div>
                                 </div>
@@ -285,7 +291,7 @@
                                     <div>
                                         <h5 class="text-lg font-bold text-slate-800 mb-2">권한 기반 회원가입 & 마이페이지</h5>
                                         <p class="text-slate-600 text-sm leading-relaxed">
-                                            일반 유저와 점주(Owner)의 권한을 명확히 분리한 회원가입 시스템을 설계했습니다. <strong>학교 이메일 인증 로직</strong>을 추가하고, 정규식(Regex)을 활용한 프론트엔드 단의 실시간 입력 데이터 필터링으로 보안과 서버 안정성을 극대화했습니다.
+                                            일반 유저와 점주(Owner)의 권한을 명확히 분리한 회원가입 시스템을 설계했습니다. <strong>학교 이메일 인증 로직</strong>을 추가하고, 정규식(Regex)을 활용한 프론트엔드 단의 실시간 입력 데이터 필터링으로 보안을 극대화했습니다.
                                         </p>
                                     </div>
                                 </div>
@@ -297,7 +303,7 @@
                                     <div>
                                         <h5 class="text-lg font-bold text-slate-800 mb-2">DOM 제어 기반 UX 최적화</h5>
                                         <p class="text-slate-600 text-sm leading-relaxed">
-                                            입력 폼 글자 수 초과 시 브라우저의 정적 차단(`maxlength`)과 이벤트 충돌이 발생하는 문제를 발견했습니다. 이를 해결하기 위해 자바스크립트로 DOM 속성을 동적 제어하고, <strong>디바운싱(Debouncing) 기법이 적용된 비동기 토스트 알림</strong>을 띄워 사용자 피드백을 부드럽게 개선했습니다.
+                                            입력 폼 글자 수 초과 시 발생하는 이벤트 충돌 문제를 해결하기 위해 자바스크립트로 DOM 속성을 동적 제어하고, <strong>디바운싱(Debouncing) 기법이 적용된 비동기 토스트 알림</strong>을 띄워 UX를 개선했습니다.
                                         </p>
                                     </div>
                                 </div>
@@ -305,6 +311,7 @@
                         </div>
                     </div>
 
+                    <!-- 하단: 프로젝트 스크린샷 갤러리 -->
                     <div class="w-full pt-10 border-t border-slate-100">
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens
@@ -356,6 +363,121 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 두 번째 프로젝트 메인 카드 (지능형 헬스케어 AI 코치) -->
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group">
+                <!-- 배경 장식 (헬스케어 느낌의 에메랄드/그린 톤) -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
+                
+                <div class="flex flex-col gap-16 relative z-10">
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        <div class="flex-[1]">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-lg border border-emerald-200">개인 사이드 프로젝트</span>
+                                <span class="text-slate-500 text-sm font-medium"><i class="fa-solid fa-flask mr-1"></i> LLM Application</span>
+                            </div>
+                            <h3 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">지능형 헬스케어 AI 코치</h3>
+                            <p class="text-lg text-slate-500 font-medium mb-6">말하는 대로 기록되는 대화형 맞춤 헬스케어 시스템</p>
+                            
+                            <p class="text-slate-600 mb-8 leading-relaxed">
+                                기존 건강 관리 앱들의 복잡한 수동 입력 방식이 유발하는 <strong>'기록 허들(Hurdle)'</strong>을 해결하기 위해 기획했습니다. 사용자가 일상적인 대화("오늘 샐러드 먹고 스쿼트 30개 했어")를 입력하면, AI가 문맥을 파악해 식단과 운동 데이터를 자동 구조화하고 개인 신체 정보에 맞춘 전문적인 코칭 피드백을 제공합니다.
+                            </p>
+                            
+                            <!-- 사용 기술 -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Python</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Streamlit</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">LangChain</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">OpenAI (gpt-4o-mini)</span>
+                                <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Prompt Engineering</span>
+                            </div>
+                            
+                            <!-- 블로그 링크 버튼 -->
+                            <a href="https://blog.naver.com/bangsa0222/224318748235" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
+                                <i class="fa-solid fa-blog text-xl"></i>
+                                프로젝트 회고 블로그 보러가기
+                                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- 우측: 핵심 기여 내용 (텍스트) -->
+                        <div class="flex-[1.2] flex flex-col justify-center">
+                            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-microchip text-emerald-500"></i> CORE ARCHITECTURE
+                            </h4>
+                            
+                            <div class="space-y-8">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-emerald-100">
+                                        <i class="fa-solid fa-brain"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">자연어(NLP) 기반 지능형 데이터 파싱</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            정형화된 드롭다운 입력 방식을 탈피했습니다. 프롬프트 엔지니어링을 통해 비정형 텍스트에서 <strong>'식단/운동' 카테고리를 자동 분류</strong>하고 핵심 수치를 추출하여 구조화된 데이터로 파싱하는 로직을 구현했습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-teal-100">
+                                        <i class="fa-solid fa-memory"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">지속적 문맥 기억 (Context Awareness)</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            단발성 챗봇의 한계를 극복하기 위해 <strong>LangChain의 ConversationBufferMemory와 Streamlit Session State</strong>를 결합했습니다. 과거 대화 맥락을 상시 유지하여, 유기적인 코칭이 가능합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 shrink-0 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center text-xl shadow-sm border border-cyan-100">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-lg font-bold text-slate-800 mb-2">동적 프롬프트 인젝션 (맞춤형 피드백)</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">
+                                            사이드바를 통해 입력받은 <strong>사용자의 신체 정보(키, 체중, 목표 체중)를 시스템 프롬프트에 실시간으로 주입(Injection)</strong>합니다. 고정된 답변이 아닌 개인의 현재 상태에 최적화된 피드백을 생성합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 하단: 프로젝트 스크린샷 갤러리 -->
+                    <div class="w-full pt-10 border-t border-slate-100">
+                        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-desktop text-emerald-500"></i> Service Screens
+                        </h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+                            <div class="flex flex-col gap-3 group/img w-full">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./image_2620fc.png" alt="대시보드 메인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Dashboard'">
+                                </div>
+                                <p class="text-center text-sm font-bold text-slate-500">목표 배터리 및 대시보드</p>
+                            </div>
+                            
+                            <div class="flex flex-col gap-3 group/img w-full">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./image_2620de.png" alt="식단 피드백" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Diet+Feedback'">
+                                </div>
+                                <p class="text-center text-sm font-bold text-slate-500">지능형 식단 영양 피드백</p>
+                            </div>
+                            
+                            <div class="flex flex-col gap-3 group/img w-full">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                                    <img src="./image_2620a8.png" alt="운동 피드백" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Exercise+Feedback'">
+                                </div>
+                                <p class="text-center text-sm font-bold text-slate-500">맞춤형 운동 코칭</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div id="education" class="mt-32 mb-10 animate-fade-in delay-400 scroll-mt-32">
