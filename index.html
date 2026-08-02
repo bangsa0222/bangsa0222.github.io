@@ -51,11 +51,13 @@
 </head>
 <body class="relative flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
 
+    <!-- 배경 장식 -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
         <div class="absolute top-[20%] right-[-5%] w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
     </div>
 
+    <!-- 상단 내비게이션 바 -->
     <header class="w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-white/80 border-b border-slate-200/50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- 로고 -->
@@ -63,7 +65,7 @@
                 원태규 포트폴리오
             </a>
             
-            <!-- 메뉴 및 연락처 링크 (글자 크기, 굵기 축소) -->
+            <!-- 메뉴 및 연락처 링크 -->
             <div class="flex items-center gap-4 md:gap-5 text-[13px] font-medium text-slate-600 overflow-x-auto w-full md:w-auto hide-scrollbar pb-2 md:pb-0 whitespace-nowrap">
                 <a href="#about" class="hover:text-blue-600 transition-colors">소개</a>
                 <a href="#project" class="hover:text-blue-600 transition-colors">프로젝트</a>
@@ -88,6 +90,7 @@
 
     <main class="flex-grow w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         
+        <!-- 소개 섹션 -->
         <div id="about" class="flex flex-col gap-12 items-center animate-fade-in scroll-mt-32">
             <div class="flex-1 text-center w-full">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-6 border border-blue-200">
@@ -111,6 +114,7 @@
             </div>
         </div>
 
+        <!-- 2x2 요약 카드 그리드 -->
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in delay-200 max-w-4xl mx-auto">
             
             <!-- 카드 1: Profile -->
@@ -222,6 +226,7 @@
 
         </div>
 
+        <!-- 프로젝트 섹션 -->
         <div id="project" class="mt-32 animate-fade-in delay-300 scroll-mt-32">
             <!-- 프로젝트 공통 타이틀 -->
             <div class="flex items-center gap-3 mb-8">
@@ -235,6 +240,7 @@
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 
                 <div class="flex flex-col gap-16 relative z-10">
+                    <!-- 상단: 프로젝트 기본 정보 및 설명 -->
                     <div class="flex flex-col lg:flex-row gap-12">
                         <div class="flex-[1]">
                             <div class="flex items-center gap-3 mb-4">
@@ -311,50 +317,56 @@
                         </div>
                     </div>
 
-                    <!-- 하단: 프로젝트 스크린샷 갤러리 -->
+                    <!-- 하단: 프로젝트 스크린샷 갤러리 (클릭 시 모달) -->
                     <div class="w-full pt-10 border-t border-slate-100">
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens
+                            <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens (클릭하여 확대)
                         </h4>
                         
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 justify-items-center">
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./login.png', '학식목장 로그인')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./login.png" alt="학식목장 로그인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Login'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">로그인</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./type.png', '학식목장 회원유형')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./type.png" alt="학식목장 회원유형" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Type'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">회원 유형</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./user_signup.png', '일반 회원가입')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./user_signup.png" alt="일반 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=User+Signup'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">일반 가입</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./owner_signup.png', '점주 회원가입')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./owner_signup.png" alt="점주 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Owner+Signup'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">점주 가입</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./owner_dashboard.png', '점주 대시보드')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./owner_dashboard.png" alt="점주 대시보드" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Dashboard'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">대시보드</p>
                             </div>
 
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px]">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 flex items-center justify-center h-full">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./admin.png', '관리자 메인')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 flex items-center justify-center h-full relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./admin.png" alt="관리자 메인" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Admin'">
                                 </div>
                                 <p class="text-center text-xs font-bold text-slate-500">관리자 화면</p>
@@ -446,29 +458,32 @@
                         </div>
                     </div>
 
-                    <!-- 하단: 프로젝트 스크린샷 갤러리 -->
+                    <!-- 하단: 프로젝트 스크린샷 갤러리 (클릭 시 모달) -->
                     <div class="w-full pt-10 border-t border-slate-100">
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-desktop text-emerald-500"></i> Service Screens
+                            <i class="fa-solid fa-desktop text-emerald-500"></i> Service Screens (클릭하여 확대)
                         </h4>
                         
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-                            <div class="flex flex-col gap-3 group/img w-full">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full cursor-pointer" onclick="openImageModal('./image_2620fc.png', '목표 배터리 대시보드')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-3xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./image_2620fc.png" alt="대시보드 메인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Dashboard'">
                                 </div>
                                 <p class="text-center text-sm font-bold text-slate-500">목표 배터리 및 대시보드</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full cursor-pointer" onclick="openImageModal('./image_2620de.png', '식단 피드백')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-3xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./image_2620de.png" alt="식단 피드백" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Diet+Feedback'">
                                 </div>
                                 <p class="text-center text-sm font-bold text-slate-500">지능형 식단 영양 피드백</p>
                             </div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full">
-                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1">
+                            <div class="flex flex-col gap-3 group/img w-full cursor-pointer" onclick="openImageModal('./image_2620a8.png', '운동 코칭')">
+                                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative">
+                                    <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-3xl drop-shadow-md transition-opacity"></i></div>
                                     <img src="./image_2620a8.png" alt="운동 피드백" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Exercise+Feedback'">
                                 </div>
                                 <p class="text-center text-sm font-bold text-slate-500">맞춤형 운동 코칭</p>
@@ -480,6 +495,7 @@
 
         </div>
 
+        <!-- 712시간 디테일 커리큘럼 섹션 -->
         <div id="education" class="mt-32 mb-10 animate-fade-in delay-400 scroll-mt-32">
             
             <div class="text-center mb-10">
@@ -582,7 +598,66 @@
         <p>© 2024 Won Taegyu. Built with Passion & Code.</p>
     </footer>
 
+    <!-- 이미지 확대 모달 (기본 숨김) -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/90 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeImageModal(event)">
+        <!-- 닫기 버튼 -->
+        <button class="absolute top-6 right-6 text-white hover:text-slate-300 text-4xl focus:outline-none transition-colors" title="닫기 (ESC)" onclick="closeImageModal(event)">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- 확대될 이미지 -->
+        <div class="relative max-w-[90vw] max-h-[90vh]">
+            <img id="modalImg" src="" alt="확대된 이미지" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300">
+        </div>
+    </div>
+
     <script>
+        // 이미지 모달 열기 함수
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openImageModal(src, alt) {
+            modalImg.src = src;
+            modalImg.alt = alt || '확대된 이미지';
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // 약간의 딜레이를 주어 부드럽게 나타나는 애니메이션 적용
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+            
+            // 모달 열렸을 때 뒷배경 스크롤 방지
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 이미지 모달 닫기 함수
+        function closeImageModal(e) {
+            // 확대된 이미지 자체를 클릭했을 때는 안 닫히게 처리
+            if (e && e.target === modalImg) return;
+            
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            
+            // 애니메이션 끝난 후 완전 숨김
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // 뒷배경 스크롤 복구
+            }, 300);
+        }
+
+        // 키보드 ESC 키 누르면 모달 닫기 기능 추가
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+
+        // 클립보드 복사 함수
         function copyToClipboard(text) {
             const tempInput = document.createElement("textarea");
             tempInput.value = text;
