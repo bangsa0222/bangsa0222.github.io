@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth scroll-pt-28">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- 아이콘을 위한 FontAwesome 추가 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -57,17 +56,39 @@
         <div class="absolute top-[20%] right-[-5%] w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
     </div>
 
-    <header class="w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-white/60 border-b border-slate-200/50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight">
+    <header class="w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-white/80 border-b border-slate-200/50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <!-- 로고 -->
+            <a href="#" class="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight shrink-0">
                 원태규 포트폴리오
             </a>
+            
+            <!-- 메뉴 및 연락처 링크 (글자 크기, 굵기 축소) -->
+            <div class="flex items-center gap-4 md:gap-5 text-[13px] font-medium text-slate-600 overflow-x-auto w-full md:w-auto hide-scrollbar pb-2 md:pb-0 whitespace-nowrap">
+                <a href="#about" class="hover:text-blue-600 transition-colors">소개</a>
+                <a href="#project" class="hover:text-blue-600 transition-colors">프로젝트</a>
+                <a href="#education" class="hover:text-blue-600 transition-colors">교육</a>
+                
+                <!-- 구분선 -->
+                <div class="w-px h-3 bg-slate-300 hidden md:block mx-1"></div>
+                
+                <!-- 연락처 정보 -->
+                <button onclick="copyToClipboard('010-3605-8760')" class="text-blue-600 hover:text-blue-800 transition-colors" title="클릭하여 복사">
+                    010-3605-8760
+                </button>
+                <button onclick="copyToClipboard('bangsa0222@naver.com')" class="text-blue-600 hover:text-blue-800 transition-colors" title="클릭하여 복사">
+                    bangsa0222@naver.com
+                </button>
+                <a href="https://github.com/bangsa0222" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
+                    GitHub
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="flex-grow w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         
-        <div class="flex flex-col gap-12 items-center animate-fade-in">
+        <div id="about" class="flex flex-col gap-12 items-center animate-fade-in scroll-mt-32">
             <div class="flex-1 text-center w-full">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-6 border border-blue-200">
                     Full-Stack Developer
@@ -90,11 +111,10 @@
             </div>
         </div>
 
-        <!-- 다시 2x2 바둑판 모양으로 변경 (카드 4개) -->
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in delay-200 max-w-4xl mx-auto">
             
-            <!-- 인적사항 카드 1 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card flex flex-col justify-between">
+            <!-- 카드 1: Profile -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-6">
                         <i class="fa-solid fa-user-astronaut"></i>
@@ -119,43 +139,45 @@
                 </div>
             </div>
 
-            <!-- 교육 과정 카드 2 (다시 추가됨!) -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col relative overflow-hidden">
+            <!-- 카드 2: Education Summary -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col justify-center relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full opacity-50 pointer-events-none"></div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                <div class="flex items-center gap-3 mb-6 relative z-10">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Education</h3>
                 </div>
                 
-                <div class="flex flex-col gap-4 flex-grow justify-center relative z-10">
+                <div class="space-y-5 relative z-10">
                     <div>
                         <div class="flex flex-wrap items-center gap-2 mb-1">
-                            <p class="text-[15px] font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">수료</span>
+                            <p class="text-base font-bold text-slate-800">클라우드 기반 JAVA 웹개발자 시큐어코딩 과정</p>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md">수료</span>
                         </div>
                         <p class="text-slate-500 font-medium text-sm">대우능력개발원 KDT (9개월 완주)</p>
                     </div>
                     
-                    <div class="w-full h-px bg-slate-100 my-1"></div>
+                    <div class="w-full h-px bg-slate-100"></div>
                     
                     <div>
-                        <div class="flex flex-wrap items-center gap-2">
-                            <p class="text-[15px] font-bold text-slate-700">인덕대학교 정보통신공학과</p>
-                            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">재학중</span>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <p class="text-base font-bold text-slate-700">인덕대학교 정보통신공학과</p>
+                            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-md">재학중</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 스킬 카드 3 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
-                    <i class="fa-solid fa-code"></i>
+            <!-- 카드 3: Core Skills -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Core Skills</h3>
                 </div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Core Skills</h3>
-                <div class="flex flex-col gap-4 flex-grow justify-center">
+                <div class="flex flex-col gap-4">
                     <div class="flex items-center gap-4"><i class="fa-brands fa-java text-orange-500 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">Java</span></div>
                     <div class="flex items-center gap-4"><i class="fa-solid fa-leaf text-green-500 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">Spring Boot / AI</span></div>
                     <div class="flex items-center gap-4"><i class="fa-brands fa-js text-yellow-400 text-xl w-6 text-center"></i> <span class="font-bold text-slate-700 text-base">JavaScript</span></div>
@@ -163,30 +185,30 @@
                 </div>
             </div>
 
-            <!-- 자격증 & 링크 카드 4 -->
-            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col">
-                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6 shrink-0">
-                    <i class="fa-solid fa-award"></i>
+            <!-- 카드 4: Certificates & Links -->
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 shadow-sm hover-card h-full flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Certificates & Links</h3>
                 </div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Certificates & Links</h3>
                 
-                <div class="space-y-4 flex flex-col flex-grow justify-between">
-                    <!-- 이력 및 자격증 리스트 -->
-                    <div class="flex flex-col gap-3 justify-center flex-grow">
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-3">
                         <div class="flex items-center gap-3">
                             <i class="fa-solid fa-check text-amber-500"></i>
                             <span class="text-slate-700 font-bold text-base">정보처리산업기사 (필기)</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-rocket text-amber-500"></i>
+                            <i class="fa-solid fa-rocket text-indigo-500"></i>
                             <span class="text-slate-700 font-bold text-base">해커톤 대회 참가</span>
                         </div>
                     </div>
 
                     <div class="w-full h-px bg-slate-100 my-2"></div>
 
-                    <!-- 개인 깃허브 링크로 변경됨 -->
-                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all shrink-0">
+                    <div class="px-5 py-4 bg-white/50 rounded-xl border border-slate-100 flex items-center justify-between group hover:bg-white hover:shadow-md transition-all">
                         <div class="flex items-center gap-3">
                             <i class="fa-solid fa-code-commit text-slate-400 group-hover:text-blue-500 transition-colors text-lg"></i>
                             <span class="font-bold text-slate-700 text-base">GitHub</span>
@@ -200,7 +222,7 @@
 
         </div>
 
-        <div class="mt-24 animate-fade-in delay-300">
+        <div id="project" class="mt-32 animate-fade-in delay-300 scroll-mt-32">
             <div class="flex items-center gap-3 mb-8">
                 <i class="fa-solid fa-laptop-code text-3xl text-blue-600"></i>
                 <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Project</h2>
@@ -283,7 +305,6 @@
                         </div>
                     </div>
 
-                    <!-- 스크린샷 갤러리 -->
                     <div class="w-full pt-10 border-t border-slate-100">
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens
@@ -337,19 +358,15 @@
             </div>
         </div>
 
-        <div class="mt-32 mb-10 animate-fade-in delay-400">
+        <div id="education" class="mt-32 mb-10 animate-fade-in delay-400 scroll-mt-32">
             
-            <!-- Education 타이틀 -->
             <div class="text-center mb-10">
                 <p class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">Education</p>
                 <h2 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">교육</h2>
                 <p class="text-slate-500 font-medium">대우능력개발원 KDT · 클라우드 기반 Java 웹개발자 시큐어코딩 과정 · 2025.11 – 2026.08</p>
             </div>
             
-            <!-- 10개 과목 커리큘럼 리스트 -->
             <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-                
-                <!-- 과목 1 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">소양교과</p>
@@ -358,7 +375,6 @@
                     <span class="font-bold text-slate-800 shrink-0">20h</span>
                 </div>
                 
-                <!-- 과목 2 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">자바 프로그래밍</p>
@@ -367,7 +383,6 @@
                     <span class="font-bold text-slate-800 shrink-0">130h</span>
                 </div>
                 
-                <!-- 과목 3 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">RDBMS 활용</p>
@@ -376,7 +391,6 @@
                     <span class="font-bold text-slate-800 shrink-0">60h</span>
                 </div>
                 
-                <!-- 과목 4 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">웹 표준 기술</p>
@@ -385,7 +399,6 @@
                     <span class="font-bold text-slate-800 shrink-0">60h</span>
                 </div>
                 
-                <!-- 과목 5 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">서버프로그램 개발</p>
@@ -394,7 +407,6 @@
                     <span class="font-bold text-slate-800 shrink-0">56h</span>
                 </div>
                 
-                <!-- 과목 6 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">프레임워크 기반 프로그래밍</p>
@@ -403,7 +415,6 @@
                     <span class="font-bold text-slate-800 shrink-0">110h</span>
                 </div>
                 
-                <!-- 과목 7 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">리눅스의 이해 및 활용</p>
@@ -412,7 +423,6 @@
                     <span class="font-bold text-slate-800 shrink-0">30h</span>
                 </div>
                 
-                <!-- 과목 8 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">AWS 클라우드 서버 구축·보안</p>
@@ -421,7 +431,6 @@
                     <span class="font-bold text-slate-800 shrink-0">40h</span>
                 </div>
                 
-                <!-- 과목 9 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 border-b border-slate-100 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">보안 코딩</p>
@@ -430,7 +439,6 @@
                     <span class="font-bold text-slate-800 shrink-0">90h</span>
                 </div>
                 
-                <!-- 과목 10 -->
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center p-6 hover:bg-slate-50/50 transition-colors gap-2">
                     <div>
                         <p class="font-bold text-slate-800 text-base mb-1">Spring AI</p>
@@ -440,7 +448,6 @@
                 </div>
             </div>
             
-            <!-- 총 시간 표시 -->
             <div class="text-center mt-8">
                 <p class="font-bold text-slate-800 text-lg">총 712h</p>
             </div>
