@@ -46,11 +46,13 @@
 </head>
 <body class="relative flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
 
+    <!-- STREAMING_CHUNK:Rendering background decoration... -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
         <div class="absolute top-[20%] right-[-5%] w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
     </div>
 
+    <!-- STREAMING_CHUNK:Rendering header navigation... -->
     <header class="w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-white/80 border-b border-slate-200/50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <a href="#" class="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight shrink-0">
@@ -69,6 +71,7 @@
         </div>
     </header>
 
+    <!-- STREAMING_CHUNK:Rendering main profile section... -->
     <main class="flex-grow w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         
         <div id="about" class="flex flex-col gap-12 items-center animate-fade-in scroll-mt-32">
@@ -157,12 +160,14 @@
             </div>
         </div>
 
+        <!-- STREAMING_CHUNK:Rendering projects section... -->
         <div id="project" class="mt-32 animate-fade-in delay-300 scroll-mt-32">
             <div class="flex items-center gap-3 mb-8">
                 <i class="fa-solid fa-laptop-code text-3xl text-blue-600"></i>
                 <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">프로젝트</h2>
             </div>
             
+            <!-- 첫 번째 프로젝트: 학식목장 -->
             <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group mb-12">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 <div class="flex flex-col gap-16 relative z-10">
@@ -236,13 +241,14 @@
                         <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <i class="fa-solid fa-mobile-screen text-blue-500"></i> Service Screens (클릭하여 확대)
                         </h4>
+                        <!-- 학식목장 스크린샷 갤러리 (매칭모드 제외, 정상 정렬) -->
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 justify-items-center">
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./type.PNG', '가입 유형 선택')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./type.PNG" alt="가입 유형" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Type'"></div><p class="text-center text-xs font-bold text-slate-500">가입 유형 선택</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./user_signup.PNG', '학생 회원가입')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./user_signup.PNG" alt="학생 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=UserSignup'"></div><p class="text-center text-xs font-bold text-slate-500">학생 회원가입</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./owner_signup.PNG', '점주 회원가입')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./owner_signup.PNG" alt="점주 회원가입" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=OwnerSignup'"></div><p class="text-center text-xs font-bold text-slate-500">점주 회원가입</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./login.PNG', '로그인')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./login.PNG" alt="로그인" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Login'"></div><p class="text-center text-xs font-bold text-slate-500">로그인</p></div>
                             
-                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./11_2.PNG', '매칭 모드 선택')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./11_2.PNG" alt="매칭 모드" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Matching'"></div><p class="text-center text-xs font-bold text-slate-500">매칭 모드</p></div>
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./11_2.PNG', '홈(메인)')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./11_2.PNG" alt="홈" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Home'"></div><p class="text-center text-xs font-bold text-slate-500">홈(메인)</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./22.PNG', '채팅방 목록')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./22.PNG" alt="채팅 목록" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Chat'"></div><p class="text-center text-xs font-bold text-slate-500">채팅 목록</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./33.PNG', '커뮤니티')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./33.PNG" alt="커뮤니티" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Community'"></div><p class="text-center text-xs font-bold text-slate-500">커뮤니티</p></div>
                             <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./44.PNG', '마이페이지')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./44.PNG" alt="마이페이지" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=MyPage'"></div><p class="text-center text-xs font-bold text-slate-500">마이페이지</p></div>
@@ -263,6 +269,7 @@
                 </div>
             </div>
 
+            <!-- 두 번째 프로젝트: 장보고 냉장고 -->
             <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group mb-12">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-50 to-amber-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 <div class="flex flex-col gap-16 relative z-10">
@@ -358,7 +365,7 @@
                 </div>
             </div>
 
-            <!-- 세 번째 프로젝트: 지능형 헬스케어 AI 코치 -->
+            <!-- 세 번째 프로젝트: 지능형 헬스케어 AI 코치 (사용자 제공 스크린샷 3장 적용) -->
             <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 relative overflow-hidden group mb-12">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-bl-[100px] -z-10 opacity-70 transition-transform duration-500 group-hover:scale-105"></div>
                 <div class="flex flex-col gap-16 relative z-10">
@@ -404,6 +411,17 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <!-- 헬스케어 프로젝트 스크린샷 갤러리 추가 -->
+                    <div class="w-full pt-10 border-t border-slate-100">
+                        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen text-emerald-500"></i> Service Screens (클릭하여 확대)
+                        </h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 justify-items-center">
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./image_2620a8.png', '건강 관리 대시보드')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./image_2620a8.png" alt="대시보드" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Health1'"></div><p class="text-center text-xs font-bold text-slate-500">건강 관리 대시보드</p></div>
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./image_2620de.png', 'AI 맞춤형 코칭')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./image_2620de.png" alt="AI 코칭" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Health2'"></div><p class="text-center text-xs font-bold text-slate-500">AI 맞춤형 코칭</p></div>
+                            <div class="flex flex-col gap-3 group/img w-full max-w-[160px] cursor-pointer" onclick="openImageModal('./image_2620fc.png', '운동 및 식단 분석')"><div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 transition-all duration-300 group-hover/img:shadow-md group-hover/img:-translate-y-1 relative"><div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors z-10 flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover/img:opacity-100 text-2xl drop-shadow-md transition-opacity"></i></div><img src="./image_2620fc.png" alt="식단 분석" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/300x600/e2e8f0/64748b?text=Health3'"></div><p class="text-center text-xs font-bold text-slate-500">운동 및 식단 분석</p></div>
                         </div>
                     </div>
                 </div>
@@ -468,6 +486,7 @@
 
         </div>
 
+        <!-- STREAMING_CHUNK:Rendering education and journey sections... -->
         <div id="education" class="mt-32 mb-10 animate-fade-in delay-400 scroll-mt-32">
             <div class="text-center mb-10">
                 <p class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">Education</p>
@@ -514,7 +533,7 @@
                 <div class="relative group">
                     <div class="absolute -left-[41px] top-1 bg-white p-2 rounded-full border-2 border-indigo-200 text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white group-hover:border-indigo-500 transition-all duration-300 shadow-sm"><i class="fa-solid fa-flag-checkered w-4 h-4 flex items-center justify-center text-sm"></i></div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">AI 기반 플랫폼 프로젝트 완성</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">'학식목장'부터 '장보고 냉장고', '모바일 음성 비서'까지, 최신 기술을 접목한 수준 높은 결과물들을 성공적으로 완성해냈습니다.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">'학식목장'부터 '장보고 냉장고', '헬스케어 AI 코치'까지, 최신 기술을 접목한 수준 높은 결과물들을 성공적으로 완성해냈습니다.</p>
                 </div>
             </div>
 
@@ -544,6 +563,7 @@
 
     </main>
 
+    <!-- STREAMING_CHUNK:Rendering footer and image modal... -->
     <footer class="w-full py-8 text-center text-sm text-slate-400 mt-auto border-t border-slate-200 bg-white/50">
         <p>© 2024 Won Taegyu. Built with Passion & Code.</p>
     </footer>
