@@ -278,12 +278,35 @@
                                 <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold rounded-md">Vanilla JS</span>
                             </div>
                             
-                            <!-- 깃허브 링크 버튼 -->
-                            <a href="https://github.com/project-mokjang/haksik" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
-                                <i class="fa-brands fa-github text-xl"></i>
-                                프로젝트 '학식목장' GitHub 보러가기
-                                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
+                            <!-- 깃허브 및 산출물 링크 버튼 그룹 -->
+                            <div class="flex flex-col gap-4">
+                                <!-- 메인 깃허브 버튼 -->
+                                <a href="https://github.com/project-mokjang/haksik" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all group w-full md:w-auto">
+                                    <i class="fa-brands fa-github text-xl"></i>
+                                    프로젝트 '학식목장' GitHub 보러가기
+                                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                
+                                <!-- 서브 기획 문서 버튼 -->
+                                <div class="flex flex-wrap items-center gap-2 mt-1">
+                                    <span class="text-xs font-bold text-slate-400 mr-1"><i class="fa-solid fa-folder-open"></i> 산출물:</span>
+                                    <a href="./requirements.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm">
+                                        <i class="fa-solid fa-file-lines text-blue-500"></i> 요구사항
+                                    </a>
+                                    <a href="./functions.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm">
+                                        <i class="fa-solid fa-list-check text-indigo-500"></i> 기능
+                                    </a>
+                                    <a href="./api_list.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-blue-600 hover:border-emerald-300 hover:bg-emerald-50 transition-all shadow-sm">
+                                        <i class="fa-solid fa-network-wired text-emerald-500"></i> API 명세
+                                    </a>
+                                    <a href="./class_diagram.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-amber-600 hover:border-amber-300 hover:bg-amber-50 transition-all shadow-sm">
+                                        <i class="fa-solid fa-sitemap text-amber-500"></i> 클래스 다이어그램
+                                    </a>
+                                    <a href="./wbs.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:text-purple-600 hover:border-purple-300 hover:bg-purple-50 transition-all shadow-sm">
+                                        <i class="fa-solid fa-chart-gantt text-purple-500"></i> WBS
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- 우측: 핵심 기여 내용 -->
